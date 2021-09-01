@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  minecraft:
+    # forge only support java15 for now
+    image: itzg/minecraft-server:java8
+    ports:
+      - "25565:25565"
+    volumes:
+      - "/home/binacs/minecraft/mc-data:/data"
+      # - "/home/binacs/minecraft/mc-mods:/mods:ro"
+    environment:
+      EULA: "TRUE"
+      TYPE: FORGE
+      VERSION: 1.16.5
+    restart: always
